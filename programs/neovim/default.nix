@@ -39,10 +39,15 @@ in
     plugins = [
       treesitterWithGrammars
     ];
+
+    extraPackages = [
+      pkgs.libgcc
+      pkgs.gnumake
+    ];
   };
 
   home.file."./.config/nvim/" = {
-    source = ./nvim;
+    source = ./lazy;
     recursive = true;
   };
 
