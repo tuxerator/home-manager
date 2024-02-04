@@ -8,6 +8,7 @@ return {
       servers = {
         gopls = {},
         nil_ls = {},
+        hls = {},
         ltex = {
           settings = {
             ltex = {
