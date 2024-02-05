@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flake-inputs, ... }:
 let
 
   treesitterWithGrammars = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
@@ -40,9 +40,21 @@ in
       treesitterWithGrammars
     ];
 
-    extraPackages = [
-      pkgs.libgcc
-      pkgs.gnumake
+    extraPackages = with pkgs; [
+      libgcc
+      gnumake
+      ninja
+      cargo
+      pkg-config
+      clang
+      gcc
+      sqlite
+      doq
+      ripgrep
+      bash
+      nixpkgs-fmt
+      nil
+      lazygit
     ];
   };
 

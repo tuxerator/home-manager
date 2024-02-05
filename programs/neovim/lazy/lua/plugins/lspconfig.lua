@@ -7,8 +7,16 @@ return {
     opts = {
       servers = {
         gopls = {},
-        nil_ls = {},
-        hls = {},
+        nil_ls = {
+          mason = false,
+          settings = {
+            ["nil"] = {
+              formatting = {
+                command = { "nixpkgs-fmt" },
+              },
+            },
+          },
+        },
         ltex = {
           settings = {
             ltex = {
