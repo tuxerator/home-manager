@@ -9,7 +9,7 @@
         kidex
         rink
         shell
-        randr
+        # randr
         websearch
       ];
       x = { fraction = 0.5; };
@@ -29,10 +29,17 @@
       )
     '';
 
+    extraConfigFiles."randr.ron".text = ''
+      Config(
+        prefix: ":dp",
+        max_entries: 5,
+      )
+    '';
+
     extraConfigFiles."websearch.ron".text = ''
       Config(
         prefix: "?",
-        engines: [DuckDuckGo]
+        engines: [DuckDuckGo],
       )
     '';
   };
