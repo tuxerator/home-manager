@@ -30,8 +30,6 @@
     kidex.url = "path:/home/jakob/flakes/kidex";
     kidex.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     nil-ls = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,7 +44,6 @@
   outputs =
     { nixpkgs
     , home-manager
-    , hyprland
     , anyrun
     , neovim-nightly-overlay
     , kidex
@@ -60,7 +57,7 @@
     let
       system = "x86_64-linux";
       overlays = [
-        neovim-nightly-overlay.overlay
+        neovim-nightly-overlay.overlays.default
         (_: _: { nil = nil-ls.packages.${system}.nil; })
       ];
 
@@ -76,11 +73,10 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          hyprland.homeManagerModules.default
           anyrun.homeManagerModules.default
           kidex.homeManagerModules.default
           flatpaks.homeManagerModules.default
-          nvimdots.nixosModules.nvimdots
+          nvimdots.homeManagerModules.nvimdots
           ironbar.homeManagerModules.default
         ];
 
