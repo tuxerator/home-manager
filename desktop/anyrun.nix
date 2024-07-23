@@ -31,6 +31,7 @@
 
     extraConfigFiles."websearch.ron".text = ''
       Config(
+        prefix: "?",
         engines: [DuckDuckGo]
       )
     '';
