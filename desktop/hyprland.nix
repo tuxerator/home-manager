@@ -70,7 +70,7 @@ with lib;
           "$mod, RETURN, exec, alacritty"
           "$mod, Q, killactive"
           "$mod, M, exit"
-          "$mod, SPACE, exec, anyrun"
+          "$mod, SPACE, exec, albert toggle"
           "SUPERCTRL,left,resizeactive,-20 0"
           "SUPERCTRL,right,resizeactive,20 0"
           "SUPERCTRL,up,resizeactive,0 -20"
