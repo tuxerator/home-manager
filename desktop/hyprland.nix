@@ -26,6 +26,11 @@ with lib;
       settings = {
         "$mod" = "SUPER";
 
+        exec-once = [
+          "eww daemon"
+          "eww open bar"
+        ];
+
         general = {
           gaps_in = 2;
           gaps_out = 0;
