@@ -6,7 +6,11 @@
     config = {
       plugins = with flake-inputs.anyrun.packages.${pkgs.system}; [
         applications
-	kidex
+        kidex
+        rink
+        shell
+        randr
+        websearch
       ];
       x = { fraction = 0.5; };
       y = { fraction = 0.5; };
@@ -22,6 +26,12 @@
     extraConfigFiles."kidex.ron".text = ''
       Config(
         max_entries: 8,
+      )
+    '';
+
+    extraConfigFiles."websearch.ron".text = ''
+      Config(
+        engines: [DuckDuckGo]
       )
     '';
   };

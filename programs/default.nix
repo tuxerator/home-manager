@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.helvum
+  home.packages = with pkgs; [
+    helvum
   ];
 }
