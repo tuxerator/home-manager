@@ -5,5 +5,6 @@
     ./hyprland.nix
     ./anyrun.nix
     ./eww
+    ./albert.nix
   ];
 }

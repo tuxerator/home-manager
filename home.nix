@@ -13,6 +13,12 @@
   home.username = "jakob";
   home.homeDirectory = "/home/jakob";
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;

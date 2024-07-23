@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 #
 # I believe there are a few ways to do this:
 #
