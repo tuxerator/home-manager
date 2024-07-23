@@ -69,7 +69,7 @@
       };
     in
     {
-      homeConfigurations."jakob" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."jakob@carrie" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,

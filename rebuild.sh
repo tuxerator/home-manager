@@ -44,7 +44,7 @@ home-manager switch &>home-manager-switch.log || (cat home-manager-switch.log | 
 current=$(home-manager generations | head -n 1)
 
 # Commit all changes witih the generation metadata
-git commit -am "$current"
+git commit --no-gpg-sig -am "$current"
 
 # Back to where you were
 popd
