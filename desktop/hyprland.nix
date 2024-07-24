@@ -94,7 +94,7 @@ with lib;
           "$mod SHIFT, right, movewindow, r"
           "$mod SHIFT, left, movewindow, l"
           "$mod, g, togglegroup"
-          "$mod CTRL, L, exec, grim -l 0 -o DP-2 /tmp/current-screen-DP-2.png && grim -l 0 -o DP-3 /tmp/current-screen-DP-3.png && hyprlock"
+          "$mod CTRL, L, exec, loginctl lock-session"
         ]
         ++ (
           builtins.concatLists (
@@ -135,7 +135,7 @@ with lib;
         background = [
           {
             monitor = "DP-2";
-            path = "/tmp/current-screen-DP-2.png";
+            path = "/tmp/current-screen-DP-2.jpeg";
             blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
@@ -143,7 +143,7 @@ with lib;
           }
           {
             monitor = "DP-3";
-            path = "/tmp/current-screen-DP-3.png";
+            path = "/tmp/current-screen-DP-3.jpeg";
             blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
@@ -194,7 +194,7 @@ with lib;
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
-          lock_cmd = "pidof hyprlock || hyprlock";
+          lock_cmd = "pidof hyprlock || grim -q 100 -t jpeg -o DP-2 /tmp/current-screen-DP-2.jpeg && grim -q 100 -t jpeg -o DP-3 /tmp/current-screen-DP-3.jpeg && hyprlock";
         };
 
         listener = [
