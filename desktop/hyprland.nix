@@ -125,7 +125,7 @@ with lib;
       enable = true;
       settings = {
         label = {
-          text = "cmd[update:1000] grim /tmp/current-screen.png";
+          text = "cmd[update:1000] grim -o DP-2 /tmp/current-screen-DP-2.png && grim -o DP-3 /tmp/current-screen-DP-3.png";
         };
         general = {
           disable_loading_bar = true;
@@ -136,8 +136,17 @@ with lib;
 
         background = [
           {
-            path = "/tmp/current-screen.png";
-            blur_passes = 0;
+            monitor = "DP-2";
+            path = "/tmp/current-screen-DP-2.png";
+            blur_passes = 1;
+            blur_size = 8;
+            contrast = 0.8916;
+            brightness = 0.8172;
+          }
+          {
+            monitor = "DP-3";
+            path = "/tmp/current-screen-DP-3.png";
+            blur_passes = 1;
             blur_size = 8;
             contrast = 0.8916;
             brightness = 0.8172;
