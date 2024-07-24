@@ -151,6 +151,17 @@ with lib;
           }
         ];
 
+        label = [{
+          monitor = "";
+          text = "$TIME";
+          color = "rgba(200,200,200,1.0)";
+          font_size = 25;
+          font_family = "Noto Sans";
+          position = "0, 80";
+          halign = "center";
+          valign = "center";
+        }];
+
         input-field = [
           {
             size = "200, 50";
@@ -162,8 +173,37 @@ with lib;
             inner_color = "rgb(91, 96, 120)";
             outer_color = "rgb(24, 25, 38)";
             outline_thickness = 5;
-            placeholder_text = "Password...";
+            placeholder_text = "$PROMPT";
+            check_color = "rgb(204,136,34)";
+            fail_color = "rgb(204,136,34)";
+            fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+            fail_timeout = 2000;
+            fail_transition = 300;
             shadow_passes = 2;
+          }
+        ];
+      };
+    };
+
+    services.hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          before_sleep_cmd = "loginctl lock-session";
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+          ignore_dbus_inhibit = false;
+          lock_cmd = "pidof hyprlock || hyprlock";
+        };
+
+        listener = [
+          {
+            timeout = 900;
+            on-timeout = "loginctl lock-session";
+          }
+          {
+            timeout = 1200;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
           }
         ];
       };
