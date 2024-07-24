@@ -19,6 +19,7 @@ with lib;
     home.packages = with pkgs; [
       firefox
       alacritty
+      grim
     ];
 
     wayland.windowManager.hyprland = {
@@ -123,6 +124,9 @@ with lib;
     programs.hyprlock = {
       enable = true;
       settings = {
+        label = {
+          text = "cmd[update:1000] grim /tmp/current-screen.png";
+        };
         general = {
           disable_loading_bar = true;
           grace = 00;
@@ -132,7 +136,7 @@ with lib;
 
         background = [
           {
-            path = "screenshot";
+            path = "/tmp/current-screen.png";
             blur_passes = 0;
             blur_size = 8;
             contrast = 0.8916;
