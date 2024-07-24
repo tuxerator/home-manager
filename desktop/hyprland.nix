@@ -94,6 +94,7 @@ with lib;
           "$mod SHIFT, right, movewindow, r"
           "$mod SHIFT, left, movewindow, l"
           "$mod, g, togglegroup"
+          "$mod CTRL, L, exec, grim -o DP-2 /tmp/current-screen-DP-2.png && grim -o DP-3 /tmp/current-screen-DP-3.png && hyprlock"
         ]
         ++ (
           builtins.concatLists (
@@ -124,9 +125,6 @@ with lib;
     programs.hyprlock = {
       enable = true;
       settings = {
-        label = {
-          text = "cmd[update:1000] grim -o DP-2 /tmp/current-screen-DP-2.png && grim -o DP-3 /tmp/current-screen-DP-3.png";
-        };
         general = {
           disable_loading_bar = true;
           grace = 00;
