@@ -155,11 +155,13 @@ with lib;
           monitor = "";
           text = "$TIME";
           color = "rgba(200,200,200,1.0)";
-          font_size = 25;
+          font_size = 50;
           font_family = "Noto Sans";
           position = "0, 80";
           halign = "center";
           valign = "center";
+          shadow_passes = 2;
+          shadow_size = 2;
         }];
 
         input-field = [
