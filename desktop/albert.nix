@@ -18,7 +18,7 @@
       Restart = "always";
     };
 
-    Install = { WantedBy = [ "default.target" ]; };
+    Install = { WantedBy = [ "hyprland-session.target" ]; };
   };
 
 }
