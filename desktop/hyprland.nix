@@ -94,7 +94,7 @@ with lib;
           "$mod SHIFT, right, movewindow, r"
           "$mod SHIFT, left, movewindow, l"
           "$mod, g, togglegroup"
-          "$mod CTRL, L, exec, grim -o DP-2 /tmp/current-screen-DP-2.png && grim -o DP-3 /tmp/current-screen-DP-3.png && hyprlock"
+          "$mod CTRL, L, exec, grim -l 0 -o DP-2 /tmp/current-screen-DP-2.png && grim -l 0 -o DP-3 /tmp/current-screen-DP-3.png && hyprlock"
         ]
         ++ (
           builtins.concatLists (
