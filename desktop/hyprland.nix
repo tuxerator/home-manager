@@ -133,8 +133,10 @@ with lib;
         background = [
           {
             path = "screenshot";
-            blur_passes = 3;
+            blur_passes = 0;
             blur_size = 8;
+            contrast = 0.8916;
+            brightness = 0.8172;
           }
         ];
 
