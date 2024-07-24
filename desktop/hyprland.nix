@@ -26,6 +26,8 @@ with lib;
       settings = {
         "$mod" = "SUPER";
 
+        monitor = cfg.monitors;
+
         exec-once = [
           "eww daemon"
           "eww open bar"
