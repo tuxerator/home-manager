@@ -6,6 +6,7 @@
       "192.168.*.*" = {
         extraOptions = {
           HostKeyAlgorithms = "+ssh-rsa";
+          PubkeyAcceptedAlgorithms = "+ssh-rsa";
         };
       };
     };
