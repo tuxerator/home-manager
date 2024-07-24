@@ -136,7 +136,7 @@ with lib;
           {
             monitor = "DP-2";
             path = "/tmp/current-screen-DP-2.png";
-            blur_passes = 1;
+            blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
             brightness = 0.8172;
@@ -144,7 +144,7 @@ with lib;
           {
             monitor = "DP-3";
             path = "/tmp/current-screen-DP-3.png";
-            blur_passes = 1;
+            blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
             brightness = 0.8172;
