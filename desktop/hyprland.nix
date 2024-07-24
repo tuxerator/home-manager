@@ -124,8 +124,8 @@ with lib;
       enable = true;
       settings = {
         general = {
-          disable_loading_bar = false;
-          grace = 300;
+          disable_loading_bar = true;
+          grace = 00;
           hide_cursor = true;
           no_fade_in = false;
         };
