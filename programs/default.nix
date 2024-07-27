@@ -3,6 +3,7 @@
 {
   imports = [
     ./ssh.nix
+    ./zsh
   ];
   home.packages = with pkgs; [
     helvum
