@@ -1,4 +1,5 @@
-@define-color noti-crit-border-color rgb(255,0,0);
+@define-color noti-crit-border-color rgba(255,0,0, 0.15);
+@define-color noti-focus rgba(0,0,0,1);
 
 $border-crit: 1px solid #{"@noti-crit-border-color"};
 .notification-row {
@@ -16,8 +17,7 @@ $border-crit: 1px solid #{"@noti-crit-border-color"};
 .notification-row {
   &:focus,
   &:hover {
-    opacity: 1;
-    background: transparent;
+    background: #{"@noti-focus"};
   }
 }
 
