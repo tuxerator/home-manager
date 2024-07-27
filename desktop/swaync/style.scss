@@ -1,4 +1,4 @@
-@define-color noti-crit-border-color rgba(255,0,0, 0.15);
+@define-color noti-crit-border-color rgb(255,0,0);
 
 $border-crit: 1px solid #{"@noti-crit-border-color"};
 .notification-row {
