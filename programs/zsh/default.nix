@@ -16,9 +16,9 @@
     sessionVariables = {
       EZA_ICONS_AUTO = true;
     };
-    envExtra = ''
-      source /etc/profile.d/nix.sh
-    '';
+    # envExtra = ''
+    #   source /etc/profile.d/nix.sh
+    # '';
     antidote = {
       enable = true;
       plugins = [
