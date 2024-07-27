@@ -24,7 +24,7 @@ $border-crit: 1px solid #{"@noti-crit"};
   background: $noti-crit;
   border: $border-crit;
   &:hover {
-    background: change-color($noti-crit, $alpha: 1);
+    background: change-color($noti-crit, $alpha: 1) !important;
   }
 }
 
