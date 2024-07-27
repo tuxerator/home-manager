@@ -53,6 +53,11 @@
            :value value
            :onchange onchange)))
 
+(defwidget time []
+(eventbox :class "time"
+          :onclick "swaync-client -t"
+          v_time))
+
 
 
 (deflisten music :initial ""
@@ -61,7 +66,7 @@
 (defpoll volume :interval "1s"
   "scripts/getvol")
 
-(defpoll time :interval "10s"
+(defpoll v_time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
 
 (defwindow bar
