@@ -13,6 +13,13 @@ $border-crit: 1px solid #{"@noti-crit-border-color"};
   padding: 0;
 }
 
+.notification-row {
+  &:focus,
+  &:hover {
+    background: rgba(var(--rgb), 1);
+  }
+}
+
 .critical {
   background: #{"@noti-crit-border-color"};
   border: $border-crit;
