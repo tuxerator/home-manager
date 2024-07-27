@@ -22,6 +22,7 @@
         notification-body-image-height = 100;
         notification-body-image-width = 200;
         widgets = [
+          "title"
           "inhibitors"
           "dnd"
           "mpris"
