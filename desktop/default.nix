@@ -6,5 +6,6 @@
     ./anyrun.nix
     ./eww
     ./albert.nix
+    ./swaync.nix
   ];
 }
