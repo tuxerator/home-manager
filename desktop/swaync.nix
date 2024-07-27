@@ -12,10 +12,10 @@
         control-center-layer = "top";
         layer-shell = true;
         cssPriority = "application";
-        control-center-margin-top = 0;
-        control-center-margin-bottom = 0;
-        control-center-margin-right = 0;
-        control-center-margin-left = 0;
+        control-center-margin-top = 2;
+        control-center-margin-bottom = 2;
+        control-center-margin-right = 2;
+        control-center-margin-left = 2;
         notification-2fa-action = true;
         notification-inline-replies = false;
         notification-icon-size = 64;
@@ -36,7 +36,7 @@
           };
           title = {
             text = "Notifications";
-            clear-all-button = false;
+            clear-all-button = true;
             button-text = "Clear All";
           };
           dnd = {
