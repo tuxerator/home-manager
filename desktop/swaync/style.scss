@@ -14,5 +14,6 @@ $border-crit: 1px solid #{"@noti-crit-border-color"};
 }
 
 .critical {
+  background: #{"@noti-crit-border-color"};
   border: $border-crit;
 }
