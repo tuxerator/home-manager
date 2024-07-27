@@ -16,7 +16,7 @@ $border-crit: 1px solid #{"@noti-crit-border-color"};
 .notification-row {
   &:focus,
   &:hover {
-    background: rgba(var(--rgb), 1);
+    opacity: 1;
   }
 }
 
