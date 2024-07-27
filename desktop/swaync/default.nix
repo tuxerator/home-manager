@@ -1,11 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, builtins, ... }:
+let
+  scss-path = ./style.scss;
+  css-path = pkgs.runCommand "swaync-scss" {} "${pkgs.sassc}/bin/sassc ${scss-path} > $out";
+  in
 {
   options = { };
 
   config = {
     services.swaync = {
       enable = true;
-      style = ./style.scss;
+      style = css-path;
       settings = {
         positionX = "right";
         positionY = "top";
