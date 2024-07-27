@@ -5,7 +5,7 @@
   config = {
     services.swaync = {
       enable = true;
-      style = ./style.css;
+      style = ./style.scss;
       settings = {
         positionX = "right";
         positionY = "top";
