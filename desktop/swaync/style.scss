@@ -16,7 +16,6 @@ $border-crit: 1px solid #{"@noti-crit"};
 
 .critical .notification-default-action {
   background: $noti-crit;
-  border: $border-crit;
   &:hover {
     background: change-color($noti-crit, $alpha: 1);
   }
