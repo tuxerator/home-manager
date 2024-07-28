@@ -7,7 +7,7 @@
       base_url = "https://api.bitwarden.eu/";
       identity_url = "https://identity.bitwarden.eu";
       email = "jakob.sanowski@sanbach.de";
-      pinentry = pkgs.pinentry;
+      pinentry = pkgs.pinentry-gnome3;
     };
   };
 }
