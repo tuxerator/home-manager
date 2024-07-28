@@ -30,7 +30,7 @@
       address = "jakob.sanowski@sanbach.de";
       userName = "jakob.sanowski@sanbach.de";
       realName = "Jakob Sanowski";
-      passwordCommand = "rbw get ";
+      passwordCommand = "rbw get --folder Email strato.email";
       imap = {
         host = "imap.strato.de";
         port = 993;
