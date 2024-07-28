@@ -5,7 +5,6 @@ with lib;
   imports = [
     ./ssh.nix
     ./zsh
-    ./wezterm
   ];
   options = {
     home.default-terminal = mkOption {
@@ -18,7 +17,10 @@ with lib;
     home.packages = with pkgs; [
       helvum
       sshfs
+      alacritty
     ];
+
+    home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
 
     services.kdeconnect = {
       enable = true;
