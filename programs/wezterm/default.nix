@@ -8,9 +8,9 @@
       enable = true;
       enableZshIntegration = true;
       extraConfig = ''
-        local color-scheme = require 'color-scheme'
+        local color_scheme = require 'color-scheme'
         local config = wezterm.config_builder()
-        color-scheme.apply_to_config(config)
+        color_scheme.apply_to_config(config)
         return config
       '';
     };
