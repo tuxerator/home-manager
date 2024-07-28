@@ -23,6 +23,8 @@ with lib;
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
 
+    xdg.portal.xdgOpenUsePortal = true;
+
     services.kdeconnect = {
       enable = true;
       indicator = true;
