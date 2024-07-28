@@ -8,7 +8,7 @@
       enable = true;
       enableZshIntegration = true;
       extraConfig = ''
-        return require 'color_scheme'
+        return require 'color-scheme'
       '';
     };
 
