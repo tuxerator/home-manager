@@ -8,6 +8,7 @@
     ./programs/flatpak.nix
     ./programs/neovim
     ./gaming.nix
+    ./email.nix
   ];
 
   home.username = "jakob";
