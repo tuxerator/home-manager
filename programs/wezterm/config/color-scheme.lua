@@ -1,5 +1,8 @@
 local wezterm = require("wezterm")
+local module = {}
 
-return {
-	color_scheme = "Catppuccin Macchiato (Gogh)",
-}
+function module.apply_to_config(config)
+	config.color_scheme = "Catppuccin Macchiato (Gogh)"
+end
+
+return module
