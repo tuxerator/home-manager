@@ -19,6 +19,7 @@ with lib;
       helvum
       sshfs
       alacritty
+      piper
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
