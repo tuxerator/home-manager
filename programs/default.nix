@@ -5,6 +5,7 @@ with lib;
   imports = [
     ./ssh.nix
     ./zsh
+    ./rbw.nix
   ];
   options = {
     home.default-terminal = mkOption {
