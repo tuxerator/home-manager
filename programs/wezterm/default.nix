@@ -13,5 +13,9 @@
     };
 
     home.default-terminal = "${pkgs.wezterm}/bin/wezterm";
+    home.file."./.config/wezterm/" = {
+      source = ./config;
+      recursive = true;
+    };
   };
 }
