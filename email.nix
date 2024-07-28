@@ -28,7 +28,7 @@
     personal = {
       primary = true;
       address = "jakob.sanowski@sanbach.de";
-      userName = "jakob.sanowski";
+      userName = "jakob.sanowski@sanbach.de";
       realName = "Jakob Sanowski";
       passwordCommand = "rbw get ";
       imap = {
