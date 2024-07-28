@@ -70,7 +70,7 @@ with lib;
 
         bind = [
           "$mod, F, fullscreen"
-          "$mod, RETURN, exec, alacritty"
+          "$mod, RETURN, exec, ${config.home.default-terminal}"
           "$mod, Q, killactive"
           "$mod, M, exit"
           "$mod, SPACE, exec, albert toggle"

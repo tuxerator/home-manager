@@ -11,5 +11,7 @@
         return require 'color_scheme'
       '';
     };
+
+    home.default-terminal = "${pkgs.wezterm}/bin/wezterm";
   };
 }
