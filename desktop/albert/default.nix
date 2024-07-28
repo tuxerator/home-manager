@@ -21,4 +21,9 @@
     Install = { WantedBy = [ "hyprland-session.target" ]; };
   };
 
+  home.file."./.config/albert/" = {
+    source = ./config;
+    recursive = true;
+  };
+
 }
