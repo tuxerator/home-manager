@@ -199,11 +199,11 @@ with lib;
 
         listener = [
           {
-            timeout = 10;
+            timeout = 600;
             on-timeout = "loginctl lock-session";
           }
           {
-            timeout = 15;
+            timeout = 700;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
