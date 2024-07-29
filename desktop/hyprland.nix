@@ -203,7 +203,7 @@ with lib;
             on-timeout = "loginctl lock-session";
           }
           {
-            timeout = 1200;
+            timeout = 15;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
