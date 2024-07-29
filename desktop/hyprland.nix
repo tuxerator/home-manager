@@ -199,7 +199,7 @@ with lib;
 
         listener = [
           {
-            timeout = 900;
+            timeout = 10;
             on-timeout = "loginctl lock-session";
           }
           {
