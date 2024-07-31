@@ -94,5 +94,13 @@
         "name": "nix packages",
         "trigger": "np",
         "url": "https://search.nixos.org/packages?channel=24.05&from=0&size=50&sort=relevance&type=packages&query=%s"
-    }
+    },
+    {
+        "fallback": true,
+        "iconPath": ":default",
+        "id": "74b7dfj8"
+        "name": "nix options",
+        "trigger": "no",
+        "url": "https://search.nixos.org/options?channel=24.05&from=0&size=50&sort=relevance&type=packages&query=%s"
+  }
 ]

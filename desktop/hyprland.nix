@@ -70,6 +70,8 @@ with lib;
 
         bind = [
           "$mod, F, fullscreen"
+          "$mod, T, togglefloating"
+          "$mod, P, pin"
           "$mod, RETURN, exec, ${config.home.default-terminal}"
           "$mod, Q, killactive"
           "$mod, M, exit"
@@ -86,6 +88,7 @@ with lib;
           "$mod, up, movefocus, u"
           "$mod, right, movefocus, r"
           "$mod, left, movefocus, l"
+          "$mod, mouse:272, movewindow"
           "$mod SHIFT, J, movewindow, d"
           "$mod SHIFT, L, movewindow, r"
           "$mod SHIFT, H, movewindow, l"
