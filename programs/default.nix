@@ -20,6 +20,7 @@ with lib;
       sshfs
       alacritty
       piper
+      davinci-resolve
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
