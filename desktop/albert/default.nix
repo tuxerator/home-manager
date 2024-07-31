@@ -16,6 +16,7 @@
           ${pkgs.albert}/bin/albert -p ${pkgs.albert}/lib/albert
       ''}";
       Restart = "always";
+      Environment = "QT_QPA_PLATFORM=xcb";
     };
 
     Install = { WantedBy = [ "hyprland-session.target" ]; };
