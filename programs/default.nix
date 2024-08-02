@@ -21,6 +21,7 @@ with lib;
       alacritty
       piper
       davinci-resolve
+      barrier
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
