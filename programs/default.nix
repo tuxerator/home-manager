@@ -7,6 +7,7 @@ with lib;
     ./zsh
     ./rbw.nix
   ];
+
   options = {
     home.default-terminal = mkOption {
       type = types.str;
@@ -22,6 +23,7 @@ with lib;
       piper
       davinci-resolve
       barrier
+      signal-cli
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
