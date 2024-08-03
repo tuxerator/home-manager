@@ -1,8 +1,9 @@
 { pkgs, builtins, ... }:
 let
   scss-path = ./style.scss;
-  css-path = pkgs.runCommand "swaync-scss" {} "${pkgs.sassc}/bin/sassc ${scss-path} > $out";
-  in
+  css-path = pkgs.runCommand "swaync-scss" { } "${pkgs.sassc}/bin/sassc ${scss-path} > $out";
+  notification = ./notification.ogg;
+in
 {
   options = { };
 
@@ -55,6 +56,10 @@ let
             image-size = 96;
             blur = true;
           };
+        };
+
+        scripts = {
+          exec = "${pkgs.sox}/bin/play -v 0.5 ${notification}";
         };
       };
     };
