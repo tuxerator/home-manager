@@ -34,5 +34,10 @@ with lib;
       enable = true;
       indicator = true;
     };
+
+    services.udiskie = {
+      enable = true;
+      automount = false;
+    };
   };
 }
