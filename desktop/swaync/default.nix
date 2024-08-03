@@ -59,7 +59,9 @@ in
         };
 
         scripts = {
-          exec = "${pkgs.sox}/bin/play -v 0.5 ${notification}";
+          notification-sound = {
+            exec = "${pkgs.sox}/bin/play -v 0.5 ${notification}";
+          };
         };
       };
     };
