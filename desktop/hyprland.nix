@@ -197,7 +197,7 @@ with lib;
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
-          lock_cmd = "pidof hyprlock || (grim -l 0 -o DP-2 /tmp/current-screen-DP-2.png && grim -l 0 -o DP-3 /tmp/current-screen-DP-3.png;  hyprlock)";
+          lock_cmd = "pidof hyprlock || (grim -l 0 -o DP-2 /tmp/current-screen-DP-2.png; grim -l 0 -o DP-3 /tmp/current-screen-DP-3.png;  hyprlock)";
         };
 
         listener = [
