@@ -17,40 +17,27 @@
 
     nvimdots.url = "github:ayamir/nvimdots";
 
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     flatpaks = {
       url = "github:GermanBread/declarative-flatpak/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kidex.url = "path:/home/jakob/flakes/kidex";
-    kidex.inputs.nixpkgs.follows = "nixpkgs";
 
     nil-ls = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ironbar = {
-      url = "github:JakeStanger/ironbar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     { nixpkgs
     , home-manager
-    , anyrun
     , neovim-nightly-overlay
-    , kidex
     , flatpaks
     , nvimdots
     , nil-ls
-    , ironbar
     , ...
     }@inputs:
 
@@ -73,11 +60,8 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          anyrun.homeManagerModules.default
-          kidex.homeManagerModules.default
           flatpaks.homeManagerModules.default
           nvimdots.homeManagerModules.nvimdots
-          ironbar.homeManagerModules.default
         ];
 
 
