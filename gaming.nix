@@ -15,4 +15,13 @@
       engine_short_names = true;
     };
   };
+
+  home.packages = with pkgs; [
+    heroic
+    teamspeak5_client
+  ];
+
+  services.flatpak.packages = [
+    "com.usebottles.bottles"
+  ];
 }

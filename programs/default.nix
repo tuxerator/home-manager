@@ -6,6 +6,7 @@ with lib;
     ./ssh.nix
     ./zsh
     ./rbw.nix
+    ./flatpak.nix
   ];
 
   options = {
@@ -22,8 +23,9 @@ with lib;
       alacritty
       piper
       davinci-resolve
-      barrier
       signal-cli
+      chromium
+      lazygit
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";

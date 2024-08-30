@@ -5,7 +5,6 @@
     ./desktop
     ./programs
     ./langs
-    ./programs/flatpak.nix
     ./programs/neovim
     ./gaming.nix
     ./email.nix

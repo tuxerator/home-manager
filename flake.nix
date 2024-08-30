@@ -19,8 +19,7 @@
 
 
     flatpaks = {
-      url = "github:GermanBread/declarative-flatpak/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:gmodena/nix-flatpak";
     };
 
 
@@ -53,14 +52,14 @@
       };
     in
     {
-      homeConfigurations."jakob@carrie" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."jakob@carrie2" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
           ./home.nix
-          flatpaks.homeManagerModules.default
+          flatpaks.homeManagerModules.nix-flatpak
           nvimdots.homeManagerModules.nvimdots
         ];
 
@@ -69,6 +68,24 @@
         # to pass through arguments to home.nix
         extraSpecialArgs.flake-inputs = inputs;
       };
+
+      homeConfigurations."jakob@carrie" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [
+          ./home.nix
+          flatpaks.homeManagerModules.nix-flatpak
+          nvimdots.homeManagerModules.nvimdots
+        ];
+
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+        extraSpecialArgs.flake-inputs = inputs;
+      };
+
 
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [

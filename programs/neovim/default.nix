@@ -54,6 +54,10 @@ in
       nixpkgs-fmt
       nil
       lazygit
+      tree-sitter
+      nodejs_22
+      jdk
+      rust-analyzer
     ];
   };
 

@@ -13,7 +13,7 @@
 set -e
 
 # cd to your config dir
-pushd ~/flakes/home-manager/
+pushd "$(dirname "$0")"
 
 # Edit your config
 # $EDITOR .

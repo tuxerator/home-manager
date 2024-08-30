@@ -7,4 +7,5 @@
     ./albert
     ./swaync
   ];
+  services.caffeine.enable = true;
 }

@@ -31,7 +31,7 @@ with lib;
 
         exec-once = [
           "eww daemon"
-          "eww open bar"
+          "eww open bar --screen 0"
         ];
 
         general = {
@@ -68,6 +68,15 @@ with lib;
           accel_profile = "flat";
         };
 
+        windowrulev2 = [
+          "idleinhibit focus, class:(steam_proton)"
+          "fullscreen, class:(steam_proton)"
+          "monitor 1, class:(steam_proton)"
+          "idleinhibit focus, class:(steam_app)(.*)"
+          "fullscreen, class:(steam_app)(.*)"
+          "monitor 1, class:(steam_app)(.*)"
+        ];
+
         bind = [
           "$mod, F, fullscreen"
           "$mod, T, togglefloating"
@@ -88,7 +97,6 @@ with lib;
           "$mod, up, movefocus, u"
           "$mod, right, movefocus, r"
           "$mod, left, movefocus, l"
-          "$mod, mouse:272, movewindow"
           "$mod SHIFT, J, movewindow, d"
           "$mod SHIFT, L, movewindow, r"
           "$mod SHIFT, H, movewindow, l"
@@ -120,6 +128,10 @@ with lib;
               ) 10)
         );
 
+        bindm = [
+          "$mod, mouse:272, movewindow"
+        ];
+
         debug = {
           disable_logs = false;
         };
@@ -137,16 +149,6 @@ with lib;
 
         background = [
           {
-            monitor = "DP-2";
-            path = "/tmp/current-screen-DP-2.png";
-            blur_passes = 3;
-            blur_size = 8;
-            contrast = 0.8916;
-            brightness = 0.8172;
-          }
-          {
-            monitor = "DP-3";
-            path = "/tmp/current-screen-DP-3.png";
             blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
@@ -197,7 +199,7 @@ with lib;
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
-          lock_cmd = "pidof hyprlock || (grim -l 0 -o DP-2 /tmp/current-screen-DP-2.png; grim -l 0 -o DP-3 /tmp/current-screen-DP-3.png;  hyprlock)";
+          lock_cmd = "pidof hyprlock || hyprlock";
         };
 
         listener = [
