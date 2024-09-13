@@ -32,6 +32,7 @@ in
 {
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     vimAlias = true;
     coc.enable = false;
 

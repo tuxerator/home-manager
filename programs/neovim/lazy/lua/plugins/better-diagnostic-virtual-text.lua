@@ -1,4 +1,5 @@
 return {
-  "sontungext/better-diagnostic-virtual-text",
+  "sontungexpt/better-diagnostic-virtual-text",
+  enabled = true,
   lazy = true,
 }

@@ -5,6 +5,9 @@ return {
       "b0o/schemastore.nvim",
     },
     opts = {
+      diagnostics = {
+        virtual_text = false,
+      },
       servers = {
         gopls = {},
         nil_ls = {
