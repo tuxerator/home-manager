@@ -41,5 +41,18 @@ with lib;
       enable = true;
       automount = false;
     };
+
+    flatpak.packages = {
+      "org.signal.Signal" = {
+        autostart = {
+          enable = true;
+          args = [
+            "--use-tray-icon"
+            "--start-in-tray"
+          ];
+        };
+      };
+      "com.discordapp.Discord" = { };
+    };
   };
 }
