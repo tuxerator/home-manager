@@ -7,6 +7,7 @@ with lib;
     ./zsh
     ./rbw.nix
     ./flatpak.nix
+    ./obs.nix
   ];
 
   options = {
