@@ -8,4 +8,7 @@
     ./swaync
   ];
   services.caffeine.enable = true;
+  home.packages = with pkgs; [
+    vesktop
+  ];
 }
