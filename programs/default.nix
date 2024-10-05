@@ -55,7 +55,9 @@ with lib;
       };
       "com.discordapp.Discord" = { };
       "io.github.spacingbat3.webcord" = { };
-      "dev.vencord.Vesktop" = { };
+      "dev.vencord.Vesktop" = {
+        autostart.enable = true;
+      };
     };
   };
 }
