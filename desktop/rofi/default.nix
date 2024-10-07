@@ -7,7 +7,7 @@
       rofi-rbw
     ];
     extraConfig = {
-      modi = "run, window, ssh, combi";
+      modi = "run,window,ssh,combi";
     };
   };
 }
