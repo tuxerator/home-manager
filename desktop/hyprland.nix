@@ -75,6 +75,8 @@ with lib;
           "idleinhibit focus, class:(steam_app)(.*)"
           "fullscreen, class:(steam_app)(.*)"
           "monitor 1, class:(steam_app)(.*)"
+          "workspace special:steam silent, class:(steam)"
+          "workspace 1 silent, class:(vesktop)"
         ];
 
         bind = [
@@ -106,6 +108,7 @@ with lib;
           "$mod SHIFT, left, movewindow, l"
           "$mod, g, togglegroup"
           "$mod CTRL, L, exec, loginctl lock-session"
+          "$mod CTRL, S, togglespecialworkspace steam"
         ]
         ++ (
           builtins.concatLists (
@@ -123,7 +126,7 @@ with lib;
                   "$mod, ${ws}, workspace, ${toString (x + 1)}"
                   "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
                   "$mod CTRL, ${ws}, togglespecialworkspace, ${toString (x + 1)}"
-                  "$mod SHIFTALT, ${ws}, movetoworkspace, special:${toString (x + 1)}"
+                  "$mod CTRLALT, ${ws}, movetoworkspace, special:${toString (x + 1)}"
                 ]
               ) 10)
         );
