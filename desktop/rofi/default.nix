@@ -12,5 +12,6 @@
 
   home.packages = with pkgs; [
     rofi-rbw
+    wtype
   ];
 }
