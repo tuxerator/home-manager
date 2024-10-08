@@ -53,6 +53,7 @@ with lib;
           ];
         };
       };
+      "dev.vencord.Vesktop" = { };
     };
   };
 }
