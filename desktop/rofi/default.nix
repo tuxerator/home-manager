@@ -4,10 +4,13 @@
   programs.rofi = {
     enable = true;
     plugins = with pkgs; [
-      rofi-rbw
     ];
     extraConfig = {
       modi = "run,window,ssh,combi";
     };
   };
+
+  home.packages = with pkgs; [
+    rofi-rbw
+  ];
 }
