@@ -86,7 +86,7 @@ with lib;
           "$mod, RETURN, exec, ${config.home.default-terminal}"
           "$mod, Q, killactive"
           "$mod, M, exit"
-          "$mod, SPACE, exec, rofi -show run"
+          "$mod, SPACE, exec, rofi -show drun"
           "SUPERCTRL,left,resizeactive,-20 0"
           "SUPERCTRL,right,resizeactive,20 0"
           "SUPERCTRL,up,resizeactive,0 -20"
