@@ -27,6 +27,7 @@ with lib;
       signal-cli
       chromium
       lazygit
+      direnv
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
