@@ -22,10 +22,12 @@
     antidote = {
       enable = true;
       plugins = [
+        "getantidote/use-omz"
         "romkatv/powerlevel10k"
         "zsh-users/zsh-completions"
         "belak/zsh-utils path:completion"
         "davidde/git"
+        "ohmyzsh/ohmyzsh path:plugins/direnv"
         "3v1n0/zsh-bash-completions-fallback kind:defer"
         "chisui/zsh-nix-shell kind:defer"
         "peterhurford/up.zsh kind:defer"

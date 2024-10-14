@@ -44,8 +44,6 @@ with lib;
       automount = false;
     };
 
-    services.lorri.enable = true;
-
     flatpak.packages = {
       "org.signal.Signal" = {
         autostart = {
