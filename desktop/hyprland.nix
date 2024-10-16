@@ -73,7 +73,7 @@ with lib;
           "idleinhibit focus, class:(steam_app)(.*)"
           "fullscreen, class:(steam_app)(.*)"
           "monitor 1, class:(steam_app)(.*)"
-          "workspace special:steam silent, class:(steam)"
+          "workspace special:steam silent, class:^(steam)$"
           "workspace 1 silent, class:(vesktop)"
         ];
 
