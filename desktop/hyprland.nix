@@ -70,8 +70,6 @@ with lib;
 
         windowrulev2 = [
           "idleinhibit focus, class:(steam_proton)"
-          "fullscreen, class:(steam_proton)"
-          "monitor 1, class:(steam_proton)"
           "idleinhibit focus, class:(steam_app)(.*)"
           "fullscreen, class:(steam_app)(.*)"
           "monitor 1, class:(steam_app)(.*)"
