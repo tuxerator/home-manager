@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     heroic
     teamspeak5_client
+    steamtinkerlaunch
   ];
 
   services.flatpak.packages = [
