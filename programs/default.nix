@@ -28,6 +28,7 @@ with lib;
       chromium
       lazygit
       direnv
+      libreoffice
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
