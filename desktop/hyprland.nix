@@ -107,7 +107,7 @@ with lib;
           "$mod, g, togglegroup"
           "$mod CTRL, L, exec, loginctl lock-session"
           "$mod CTRL, S, togglespecialworkspace, steam"
-          "$mod CTRLALT, S movetoworkspace, special:steam"
+          "$mod CTRLALT, S, movetoworkspace, special:steam"
         ]
         ++ (
           builtins.concatLists (
