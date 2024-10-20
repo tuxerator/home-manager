@@ -69,7 +69,7 @@ with lib;
         };
 
         cursor = {
-          no_hardware_cursor = true;
+          no_hardware_cursors = true;
         };
 
         windowrulev2 = [
