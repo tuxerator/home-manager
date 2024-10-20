@@ -8,6 +8,7 @@ with lib;
     ./rbw.nix
     ./flatpak.nix
     ./obs.nix
+    ./creative.nix
   ];
 
   options = {
@@ -23,7 +24,6 @@ with lib;
       sshfs
       alacritty
       piper
-      davinci-resolve
       signal-cli
       chromium
       lazygit
