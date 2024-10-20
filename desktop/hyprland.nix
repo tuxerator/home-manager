@@ -68,6 +68,10 @@ with lib;
           accel_profile = "flat";
         };
 
+        cursor = {
+          no_hardware_cursor = true;
+        };
+
         windowrulev2 = [
           "idleinhibit focus, class:(steam_proton)"
           "idleinhibit focus, class:(steam_app)(.*)"
