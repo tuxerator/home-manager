@@ -5,5 +5,7 @@
     qtractor
     davinci-resolve
     raysession
+    reaper
+    helio-workstation
   ];
 }

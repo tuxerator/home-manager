@@ -29,6 +29,7 @@ with lib;
       lazygit
       direnv
       libreoffice
+      whisper
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
