@@ -7,5 +7,6 @@
     raysession
     reaper
     helio-workstation
+    zrythm
   ];
 }
