@@ -17,7 +17,6 @@ with lib;
 
   config = {
     home.packages = with pkgs; [
-      firefox
       alacritty
       grim
     ];

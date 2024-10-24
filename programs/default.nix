@@ -8,7 +8,6 @@ with lib;
     ./rbw.nix
     ./flatpak.nix
     ./obs.nix
-    ./creative.nix
   ];
 
   options = {
@@ -30,6 +29,7 @@ with lib;
       direnv
       libreoffice
       whisper
+      firefox
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";

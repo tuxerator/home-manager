@@ -15,18 +15,12 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-    nvimdots.url = "github:ayamir/nvimdots";
-
 
     flatpaks = {
       url = "github:gmodena/nix-flatpak";
     };
 
 
-    nil-ls = {
-      url = "github:oxalica/nil";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
   };
 
@@ -35,16 +29,14 @@
     , home-manager
     , neovim-nightly-overlay
     , flatpaks
-    , nvimdots
-    , nil-ls
     , ...
     }@inputs:
 
     let
       system = "x86_64-linux";
       overlays = [
-        neovim-nightly-overlay.overlays.default
-        (_: _: { nil = nil-ls.packages.${system}.nil; })
+    #    neovim-nightly-overlay.overlays.default
+    #    (_: _: { nil = nil-ls.packages.${system}.nil; })
       ];
 
       pkgs = import nixpkgs {
@@ -60,7 +52,6 @@
         modules = [
           ./home.nix
           flatpaks.homeManagerModules.nix-flatpak
-          nvimdots.homeManagerModules.nvimdots
         ];
 
 
@@ -69,6 +60,21 @@
         extraSpecialArgs.flake-inputs = inputs;
       };
 
+      homeConfigurations."jakob@thickPad" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [
+          ./home.nix
+          flatpaks.homeManagerModules.nix-flatpak
+        ];
+
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+        extraSpecialArgs.flake-inputs = inputs;
+      };
       homeConfigurations."jakob@carrie" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -77,7 +83,6 @@
         modules = [
           ./home.nix
           flatpaks.homeManagerModules.nix-flatpak
-          nvimdots.homeManagerModules.nvimdots
         ];
 
 
