@@ -30,6 +30,7 @@ with lib;
       libreoffice
       whisper
       firefox
+      papers
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
