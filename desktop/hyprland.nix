@@ -28,6 +28,7 @@ with lib;
             };
           };
         };
+        default = { };
       };
       gestures = mkOption {
         type = types.submodule {
@@ -80,6 +81,7 @@ with lib;
         monitor = cfg.monitors;
         workspace = cfg.workspace_rules;
         gestures = cfg.gestures;
+        input.touchpad = cfg.touchpad;
 
         exec-once = [
           "eww daemon"
