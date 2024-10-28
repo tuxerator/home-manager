@@ -35,8 +35,8 @@
     let
       system = "x86_64-linux";
       overlays = [
-    #    neovim-nightly-overlay.overlays.default
-    #    (_: _: { nil = nil-ls.packages.${system}.nil; })
+        #    neovim-nightly-overlay.overlays.default
+        #    (_: _: { nil = nil-ls.packages.${system}.nil; })
       ];
 
       pkgs = import nixpkgs {
@@ -67,6 +67,7 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
+          ./thickPad.nix
           flatpaks.homeManagerModules.nix-flatpak
         ];
 

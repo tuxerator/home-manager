@@ -8,10 +8,61 @@ with lib;
 
 {
   options = {
-    hyprland.monitors = mkOption {
-      default = [ ",preferred,auto,1" ];
-      type = types.listOf types.str;
-      description = "Hyprland monitor configs";
+    hyprland = {
+      monitors = mkOption {
+        default = [ ",preferred,auto,1" ];
+        type = types.listOf types.str;
+        description = "Hyprland monitor configs";
+      };
+      workspace_rules = mkOption {
+        default = [ ];
+        type = types.listOf types.str;
+        description = "Hyprland workspace rules";
+      };
+      touchpad = mkOption {
+        type = types.submodule {
+          options = {
+            natural_scroll = mkOption {
+              type = types.bool;
+              default = true;
+            };
+          };
+        };
+      };
+      gestures = mkOption {
+        type = types.submodule {
+          options = {
+            workspace_swipe = mkOption {
+              type = types.bool;
+              default = true;
+            };
+            workspace_swipe_fingers = mkOption {
+              type = types.ints.unsigned;
+              default = 3;
+            };
+            workspace_swipe_distance = mkOption {
+              type = types.ints.unsigned;
+              default = 300;
+            };
+            workspace_swipe_cancel_ratio = mkOption {
+              type = types.numbers.between 0.0 1.0;
+              default = 0.7;
+            };
+          };
+        };
+        default = { };
+      };
+
+      hyprlock = mkOption {
+        type = types.submodule {
+          options = {
+            background = mkOption {
+              type = types.str;
+              default = "";
+            };
+          };
+        };
+      };
     };
   };
 
@@ -27,6 +78,8 @@ with lib;
         "$mod" = "SUPER";
 
         monitor = cfg.monitors;
+        workspace = cfg.workspace_rules;
+        gestures = cfg.gestures;
 
         exec-once = [
           "eww daemon"
@@ -142,6 +195,7 @@ with lib;
         };
       };
     };
+
     programs.hyprlock = {
       enable = true;
       settings = {
@@ -154,6 +208,7 @@ with lib;
 
         background = [
           {
+            path = cfg.hyprlock.background;
             blur_passes = 3;
             blur_size = 8;
             contrast = 0.8916;
