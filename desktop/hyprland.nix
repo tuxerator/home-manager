@@ -261,7 +261,7 @@ with lib;
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
-          lock_cmd = "${pkgs.sysvtools}/bin/pidog hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+          lock_cmd = "${pkgs.sysvtools}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
         };
 
         listener = [
