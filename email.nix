@@ -72,7 +72,7 @@
         editor = "nvim";
       };
       filters = {
-        "text/plain" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
+        "text/plain" = "";
       };
     };
   };
