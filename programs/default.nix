@@ -8,6 +8,7 @@ with lib;
     ./rbw.nix
     ./flatpak.nix
     ./obs.nix
+    ./alacritty.nix
   ];
 
   options = {
@@ -21,7 +22,6 @@ with lib;
     home.packages = with pkgs; [
       helvum
       sshfs
-      alacritty
       piper
       signal-cli
       chromium
