@@ -72,7 +72,7 @@
         editor = "nvim";
       };
       filters = {
-        "text/plain" = "</dev/stdin > /dev/stdout";
+        "text/plain" = "cat /dev/stdin";
       };
     };
   };
