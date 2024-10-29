@@ -5,5 +5,5 @@
     ", preferred, auto-up, auto"
   ];
 
-  hyprland.hyprlock.background = "screenshot";
+  hyprlock.background = "screenshot";
 }

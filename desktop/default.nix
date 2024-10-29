@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hyprland.nix
+    ./hyprland
     ./eww
     ./swaync
     ./rofi

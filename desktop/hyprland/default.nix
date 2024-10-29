@@ -7,6 +7,10 @@ in
 with lib;
 
 {
+  imports = [
+    ./hypridle.nix
+    ./hyprlock.nix
+  ];
   options = {
     hyprland = {
       monitors = mkOption {
@@ -54,16 +58,6 @@ with lib;
         default = { };
       };
 
-      hyprlock = mkOption {
-        type = types.submodule {
-          options = {
-            background = mkOption {
-              type = types.str;
-              default = "";
-            };
-          };
-        };
-      };
     };
   };
 
@@ -198,84 +192,6 @@ with lib;
       };
     };
 
-    programs.hyprlock = {
-      enable = true;
-      settings = {
-        general = {
-          disable_loading_bar = true;
-          grace = 00;
-          hide_cursor = true;
-          no_fade_in = false;
-        };
 
-        background = [
-          {
-            path = cfg.hyprlock.background;
-            blur_passes = 3;
-            blur_size = 8;
-            contrast = 0.8916;
-            brightness = 0.8172;
-          }
-        ];
-
-        label = [{
-          monitor = "";
-          text = "$TIME";
-          color = "rgba(200,200,200,1.0)";
-          font_size = 50;
-          font_family = "Noto Sans";
-          position = "0, 80";
-          halign = "center";
-          valign = "center";
-          shadow_passes = 2;
-          shadow_size = 2;
-        }];
-
-        input-field = [
-          {
-            size = "200, 50";
-            position = "0, -80";
-            monitor = "";
-            dots_center = true;
-            fade_on_empty = false;
-            font_color = "rgb(202, 211, 245)";
-            inner_color = "rgb(91, 96, 120)";
-            outer_color = "rgb(24, 25, 38)";
-            outline_thickness = 5;
-            placeholder_text = "$PROMPT";
-            check_color = "rgb(204,136,34)";
-            fail_color = "rgb(204,136,34)";
-            fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
-            fail_timeout = 2000;
-            fail_transition = 300;
-            shadow_passes = 2;
-          }
-        ];
-      };
-    };
-
-    services.hypridle = {
-      enable = true;
-      settings = {
-        general = {
-          before_sleep_cmd = "loginctl lock-session";
-          after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-          ignore_dbus_inhibit = false;
-          lock_cmd = "${pkgs.sysvtools}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
-        };
-
-        listener = [
-          {
-            timeout = 600;
-            on-timeout = "loginctl lock-session";
-          }
-          {
-            timeout = 700;
-            on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-            on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-          }
-        ];
-      };
-    };
   };
 }
