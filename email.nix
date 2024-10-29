@@ -71,6 +71,9 @@
       compose = {
         editor = "nvim";
       };
+      openers = {
+        "text/plain" = "nvim";
+      };
     };
   };
 }
