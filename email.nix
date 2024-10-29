@@ -71,8 +71,8 @@
       compose = {
         editor = "nvim";
       };
-      openers = {
-        "text/plain" = "nvim";
+      filters = {
+        "text/plain" = "${pkgs.aerc}/libexec/aerc/colorize";
       };
     };
   };
