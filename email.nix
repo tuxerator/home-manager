@@ -72,7 +72,7 @@
         editor = "nvim";
       };
       filters = {
-        "text/plain" = "";
+        "text/plain" = "nvim {}";
       };
     };
   };
