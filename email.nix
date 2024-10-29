@@ -66,13 +66,13 @@
     extraConfig = {
       general.unsafe-accounts-conf = true;
       viewer = {
-        pager = "less";
+        pager = "nvim -M";
       };
       compose = {
         editor = "nvim";
       };
       filters = {
-        "text/plain" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
+        "text/plain" = "</dev/stdin > /dev/stdout";
       };
     };
   };
