@@ -31,6 +31,7 @@ with lib;
       whisper
       firefox
       papers
+      networkmanagerapplet
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
