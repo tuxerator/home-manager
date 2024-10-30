@@ -43,6 +43,8 @@ with lib;
       indicator = true;
     };
 
+    services.network-manager-applet.enable = true;
+
     services.udiskie = {
       enable = true;
       automount = false;
