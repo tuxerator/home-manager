@@ -20,8 +20,7 @@
       url = "github:gmodena/nix-flatpak";
     };
 
-
-
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -29,6 +28,7 @@
     , home-manager
     , neovim-nightly-overlay
     , flatpaks
+    , stylix
     , ...
     }@inputs:
 
@@ -69,6 +69,7 @@
           ./home.nix
           ./thickPad.nix
           flatpaks.homeManagerModules.nix-flatpak
+          stylix.homeManagerModules.stylix
         ];
 
 
