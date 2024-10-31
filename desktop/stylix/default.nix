@@ -9,6 +9,7 @@
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
+      size = 256;
     };
     fonts = {
       serif = {
@@ -30,6 +31,10 @@
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
+    };
+
+    opacity = {
+      terminal = 0.7;
     };
   };
 }
