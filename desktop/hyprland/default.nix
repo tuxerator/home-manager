@@ -11,6 +11,7 @@ with lib;
     ./hypridle.nix
     ./hyprlock.nix
   ];
+
   options = {
     hyprland = {
       monitors = mkOption {
@@ -65,6 +66,8 @@ with lib;
     home.packages = with pkgs; [
       alacritty
       grim
+      wl-mirror
+      slurp
     ];
 
     wayland.windowManager.hyprland = {
@@ -135,7 +138,7 @@ with lib;
           "$mod, P, pin"
           "$mod, RETURN, exec, ${config.home.default-terminal}"
           "$mod, Q, killactive"
-          "$mod, M, exit"
+          "$mod SHIFT, del, exit"
           "$mod, SPACE, exec, rofi -show drun"
           "SUPERCTRL,left,resizeactive,-20 0"
           "SUPERCTRL,right,resizeactive,20 0"
@@ -149,6 +152,9 @@ with lib;
           "$mod, up, movefocus, u"
           "$mod, right, movefocus, r"
           "$mod, left, movefocus, l"
+          "$mod CTRL, M, exec, wl-present mirror"
+          "$mod CTRL, O, exec, wl-present set-output"
+          "$mod CTRL, P, exec, wl-present set-region"
           "$mod SHIFT, J, movewindow, d"
           "$mod SHIFT, L, movewindow, r"
           "$mod SHIFT, H, movewindow, l"
