@@ -8,5 +8,7 @@
     ./rofi
   ];
   home.packages = with pkgs; [
+    wl-mirror
+    slurp
   ];
 }
