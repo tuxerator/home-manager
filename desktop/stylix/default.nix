@@ -2,6 +2,8 @@
 
 {
   stylix = {
+    enable = true;
+    image = ./Wallpaper/paul-nong-mononoke-50-percent.jpg;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {

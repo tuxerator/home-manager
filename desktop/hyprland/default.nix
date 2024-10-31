@@ -90,8 +90,6 @@ with lib;
           gaps_out = 0;
           border_size = 2;
           no_border_on_floating = true;
-          "col.active_border" = "rgba(56b6c2ff)";
-          "col.inactive_border" = "rgba(343a40ff)";
           resize_on_border = true;
         };
 

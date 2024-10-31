@@ -6,7 +6,7 @@
     ./eww
     ./swaync
     ./rofi
-    ./stylix.nix
+    ./stylix
   ];
   home.packages = with pkgs; [
   ];
