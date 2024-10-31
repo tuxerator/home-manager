@@ -138,7 +138,7 @@ with lib;
           "$mod, P, pin"
           "$mod, RETURN, exec, ${config.home.default-terminal}"
           "$mod, Q, killactive"
-          "$mod SHIFT, del, exit"
+          "$mod SHIFT, delete, exit"
           "$mod, SPACE, exec, rofi -show drun"
           "SUPERCTRL,left,resizeactive,-20 0"
           "SUPERCTRL,right,resizeactive,20 0"
