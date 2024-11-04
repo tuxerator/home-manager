@@ -61,7 +61,9 @@ with lib;
         };
       };
       "dev.vencord.Vesktop" = { };
-      "com.rtosta.zapzap" = { };
+      "com.rtosta.zapzap" = {
+        autostart.enable = true;
+      };
     };
   };
 }
