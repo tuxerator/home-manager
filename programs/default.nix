@@ -61,7 +61,7 @@ with lib;
         };
       };
       "dev.vencord.Vesktop" = { };
-      "com.ktechpit.whatsie" = { };
+      "com.rtosta.zapzap" = { };
     };
   };
 }
