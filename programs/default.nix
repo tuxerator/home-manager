@@ -32,6 +32,7 @@ with lib;
       firefox
       papers
       networkmanagerapplet
+      hotspot
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
