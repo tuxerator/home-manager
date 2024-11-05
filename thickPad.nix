@@ -5,5 +5,9 @@
     ", preferred, auto-up, auto"
   ];
 
+  hyprland.workspace_rules = [
+    "2, monitor:HDMI-A-2, default:true"
+  ];
+
   hyprlock.background = "screenshot";
 }
