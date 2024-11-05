@@ -33,6 +33,7 @@ with lib;
       papers
       networkmanagerapplet
       hotspot
+      perf-tools
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
