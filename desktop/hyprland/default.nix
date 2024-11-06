@@ -64,6 +64,12 @@ with lib;
         default = { };
       };
 
+      keybinds = mkOption {
+        type = types.listOf types.str;
+        description = "Hyprland keybinds";
+        default = [ ];
+      };
+
     };
   };
 
@@ -88,6 +94,7 @@ with lib;
         workspace = cfg.workspace_rules;
         gestures = cfg.gestures;
         input.touchpad = cfg.touchpad;
+        binds = cfg.keybinds;
 
         exec-once = [
           "eww daemon"
@@ -199,11 +206,6 @@ with lib;
         bindm = [
           "$mod, mouse:272, movewindow"
         ];
-
-        debug = {
-          disable_logs = false;
-          enable_stdout_logs = true;
-        };
       };
     };
 

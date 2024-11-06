@@ -70,5 +70,9 @@ with lib;
         autostart.enable = true;
       };
     };
+
+    hyprland.keybinds = [
+      "$mod CTRL, m, togglespecialworkspace, messenger"
+    ];
   };
 }
