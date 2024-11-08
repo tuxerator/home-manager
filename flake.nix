@@ -52,6 +52,7 @@
         modules = [
           ./home.nix
           flatpaks.homeManagerModules.nix-flatpak
+          stylix.homeManagerModules.stylix
         ];
 
 

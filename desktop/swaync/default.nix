@@ -10,7 +10,6 @@ in
   config = {
     services.swaync = {
       enable = true;
-      style = css-path;
       settings = {
         positionX = "right";
         positionY = "top";
