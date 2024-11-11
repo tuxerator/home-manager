@@ -7,15 +7,18 @@
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (systray :class "systray")
-    (metric :label "🔊"
+    (metric :label "${volume <= 0 ? '󰖁' :
+                volume < 35 ? '󰕿' :
+                volume < 70 ? '󰖀' : '󰕾'}"
             :value volume
             :onchange "amixer -D pulse sset Master {}%")
-    (metric :label ""
+    (metric :label ""
             :value {EWW_RAM.used_mem_perc}
             :onchange "")
     (metric :label "💾"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange "")
+    (bat) 
     (time)))
 
 (defwidget workspaces []
@@ -52,6 +55,30 @@
            :active {onchange != ""}
            :value value
            :onchange onchange)))
+
+
+(defwidget bat []
+  (eventbox :onhover "eww update bat=true"
+    (box :class "metric"
+    :onhoverlost "eww update bat=false"
+    "${(EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 10 ? '󱃍' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 20 ? '󰁻' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 30 ? '󰁼' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 40 ? '󰁽' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 50 ? '󰁾' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 60 ? '󰁿' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 70 ? '󰂀' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 80 ? '󰂁' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 90 ? '󰂂' :
+      (EWW_BATTERY["BAT0"].capacity + EWW_BATTERY["BAT1"].capacity) / 2 < 100 ? '󰁹' : '󰁹'}"
+    (revealer :transition "slideleft" :reveal bat
+      (scale :value {EWW_BATTERY["BAT0"].capacity}
+                        :min 0
+                        :max 101
+                        :activate true
+                        :orientation "h"))
+    )))
+(defvar bat true)
 
 (defwidget time []
 (eventbox :class "time"

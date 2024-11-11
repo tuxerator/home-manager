@@ -94,7 +94,6 @@ with lib;
         workspace = cfg.workspace_rules;
         gestures = cfg.gestures;
         input.touchpad = cfg.touchpad;
-        binds = cfg.keybinds;
 
         exec-once = [
           "eww daemon"
@@ -201,7 +200,7 @@ with lib;
                   "$mod CTRLALT, ${ws}, movetoworkspace, special:${toString (x + 1)}"
                 ]
               ) 10)
-        );
+        ) ++ cfg.keybinds;
 
         bindm = [
           "$mod, mouse:272, movewindow"
