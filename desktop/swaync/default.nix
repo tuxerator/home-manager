@@ -1,7 +1,5 @@
 { pkgs, builtins, ... }:
 let
-  scss-path = ./style.scss;
-  css-path = pkgs.runCommand "swaync-scss" { } "${pkgs.sassc}/bin/sassc ${scss-path} > $out";
   notification = ./notification.ogg;
 in
 {
