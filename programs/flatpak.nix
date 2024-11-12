@@ -54,7 +54,6 @@ let
               #!/run/current-system/sw/bin/bash
               ${value.autostart.command}
           ''}";
-          Restart = "always";
         };
 
         Install = { WantedBy = [ "graphical-session.target" ]; };
