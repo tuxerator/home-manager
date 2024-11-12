@@ -7,6 +7,7 @@
     ./swaync
     ./rofi
     ./stylix
+    ./defaultApps.nix
   ];
   home.packages = with pkgs; [
   ];

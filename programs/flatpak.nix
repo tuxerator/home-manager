@@ -49,7 +49,7 @@ let
         };
 
         Service = {
-          Type = "simple";
+          Type = "oneshot";
           ExecStart = "${pkgs.writeShellScript "start-${value.package}" ''
               #!/run/current-system/sw/bin/bash
               ${value.autostart.command}
