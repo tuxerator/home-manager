@@ -56,9 +56,9 @@ with lib;
     };
 
     flatpak.packages = {
-      "org.signal.Signal" = {
+      "de.schmidhuberj.Flare" = {
         autostart = {
-          enable = true;
+          enable = false;
           args = [
             "--use-tray-icon"
             "--start-in-tray"
