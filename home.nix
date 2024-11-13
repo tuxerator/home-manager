@@ -6,7 +6,6 @@
     ./programs
     ./langs
     ./programs/neovim
-    ./gaming.nix
     ./email.nix
   ];
 

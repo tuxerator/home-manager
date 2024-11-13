@@ -24,7 +24,6 @@ with lib;
       helvum
       sshfs
       piper
-      signal-cli
       chromium
       lazygit
       direnv
@@ -32,7 +31,6 @@ with lib;
       whisper
       firefox
       papers
-      networkmanagerapplet
       hotspot
       perf-tools
       jq
@@ -67,7 +65,7 @@ with lib;
       };
       "dev.vencord.Vesktop" = { };
       "com.rtosta.zapzap" = {
-        autostart.enable = true;
+        autostart.enable = false;
       };
     };
 
