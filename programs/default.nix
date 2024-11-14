@@ -41,11 +41,6 @@ with lib;
 
     xdg.portal.xdgOpenUsePortal = true;
 
-    services.kdeconnect = {
-      enable = true;
-      indicator = true;
-    };
-
     services.network-manager-applet.enable = true;
 
     services.udiskie = {

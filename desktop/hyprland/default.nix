@@ -87,6 +87,7 @@ with lib;
 
     wayland.windowManager.hyprland = {
       enable = true;
+      xwayland.enable = false;
       settings = {
         "$mod" = "SUPER";
 
