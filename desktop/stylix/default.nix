@@ -37,4 +37,9 @@
       terminal = 0.7;
     };
   };
+
+  gtk.iconTheme = {
+    name = "papirus";
+    package = pkgs.papirus-icon-theme;
+  };
 }

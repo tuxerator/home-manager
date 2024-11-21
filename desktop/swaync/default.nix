@@ -27,6 +27,8 @@ in
         widgets = [
           "title"
           "inhibitors"
+          "buttons-grid"
+          "volume"
           "dnd"
           "mpris"
           "notifications"
@@ -52,6 +54,20 @@ in
           mpris = {
             image-size = 96;
             blur = true;
+          };
+          volume = {
+            label = "Volume";
+            show-per-app = true;
+          };
+          buttons-grid = {
+            actions = [
+              {
+                label = " ";
+                type = "toggle";
+                command = "wpctl set-mute @DEFAULT_SINK@ toggle";
+                active = true;
+              }
+            ];
           };
         };
 

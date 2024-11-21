@@ -34,6 +34,8 @@ with lib;
       hotspot
       perf-tools
       jq
+      libsecret
+      flare-signal
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
@@ -49,18 +51,15 @@ with lib;
     };
 
     flatpak.packages = {
-      "de.schmidhuberj.Flare" = {
+      "org.signal.Signal" = {
         autostart = {
-          enable = false;
-          args = [
-            "--use-tray-icon"
-            "--start-in-tray"
-          ];
+          enable = true;
+          args = [ "--use-tray-icon" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" "--enable-features=WaylandWindowDecorations" ];
         };
       };
       "dev.vencord.Vesktop" = { };
       "com.rtosta.zapzap" = {
-        autostart.enable = false;
+        autostart.enable = true;
       };
     };
 

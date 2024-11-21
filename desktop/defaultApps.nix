@@ -1,6 +1,9 @@
 { ... }:
 {
-  xdg.mimeApps.defaultApplications = {
-    "application/pdf" = [ "org.gnome.Papers.desktop" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "org.gnome.Papers.desktop" ];
+    };
   };
 }
