@@ -36,6 +36,7 @@ with lib;
       jq
       libsecret
       flare-signal
+      plex-media-player
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
