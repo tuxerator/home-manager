@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, flake-inputs, ... }:
 
 let
   cfg = config.hyprland;
@@ -18,6 +18,11 @@ with lib;
         default = [ ",preferred,auto,1" ];
         type = types.listOf types.str;
         description = "Hyprland monitor configs";
+      };
+      primary_monitor = mkOption {
+        default = null;
+        type = types.str;
+        description = "Default primary monitor for XWayland.";
       };
       workspace_rules = mkOption {
         default = [ ];
@@ -69,6 +74,10 @@ with lib;
       wl-mirror
       slurp
     ];
+    nix.settings = {
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -83,6 +92,7 @@ with lib;
         exec-once = [
           "eww daemon"
           "eww open bar --screen 0"
+          (lib.mkIf (cfg.primary_monitor != null) "xrandr --output ${cfg.primary_monitor} --primary")
         ];
 
         general = {
@@ -192,6 +202,7 @@ with lib;
 
         debug = {
           disable_logs = false;
+          enable_stdout_logs = true;
         };
       };
     };

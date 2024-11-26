@@ -10,6 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-hyprXPrimary = {
+      url = "github:tuxerator/hyprXPrimary";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     neovim-nightly-overlay = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/neovim-nightly-overlay";

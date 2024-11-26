@@ -1,3 +1,5 @@
 return {
-  { "kblin/vim-fountain" },
+  "kblin/vim-fountain",
+  lazy = true,
+  ft = ".fountain",
 }
