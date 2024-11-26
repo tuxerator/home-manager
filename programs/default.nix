@@ -37,6 +37,7 @@ with lib;
       libsecret
       flare-signal
       plex-media-player
+      pwvucontrol
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
