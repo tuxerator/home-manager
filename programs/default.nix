@@ -55,14 +55,11 @@ with lib;
     flatpak.packages = {
       "org.signal.Signal" = {
         autostart = {
-          enable = true;
           args = [ "--use-tray-icon" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" "--enable-features=WaylandWindowDecorations" ];
         };
       };
       "dev.vencord.Vesktop" = { };
-      "com.rtosta.zapzap" = {
-        autostart.enable = true;
-      };
+      "com.rtosta.zapzap" = { };
     };
 
     hyprland.keybinds = [
