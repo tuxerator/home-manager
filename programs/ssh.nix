@@ -2,6 +2,9 @@
 {
   programs.ssh = {
     enable = true;
+    extraConfig = ''
+      PasswordAuthentication no
+    '';
     matchBlocks = {
       "192.168.*.*" = {
         extraOptions = {
