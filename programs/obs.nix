@@ -7,7 +7,7 @@
   ];
 
   hyprland.keybinds = [
-    "$mod, ALT N, pass, ^(com\.obsproject\.Studio)$"
-    "$mod, ALT B, pass, ^(com\.obsproject\.Studio)$"
+    "$mod ALT_L, N, pass, ^(com\.obsproject\.Studio)$"
+    "$mod ALT_L, B, pass, ^(com\.obsproject\.Studio)$"
   ];
 }
