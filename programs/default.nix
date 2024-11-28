@@ -65,7 +65,7 @@ with lib;
     hyprland.keybinds = [
       "$mod CTRL, m, togglespecialworkspace, messenger"
       "$mod CTRL, B, togglespecialworkspace, browser"
-      "$mod CTRLALT, S, movetoworkspace, special:messenger"
+      "$mod CTRLALT, B, movetoworkspace, special:messenger"
     ];
   };
 }
