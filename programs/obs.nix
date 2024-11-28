@@ -5,4 +5,7 @@
     pkgs.obs-studio-plugins.droidcam-obs
     pkgs.obs-studio-plugins.advanced-scene-switcher
   ];
+
+  hyprland.keybinds = [
+  ];
 }
