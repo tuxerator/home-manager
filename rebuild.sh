@@ -35,7 +35,7 @@ fi
 #   )
 
 # Shows your changes
-git diff -U0
+git diff -U0 --staged
 
 echo "home-manager Rebuilding..."
 
