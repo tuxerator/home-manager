@@ -18,6 +18,8 @@ pushd "$(dirname "$0")"
 # Edit your config
 # $EDITOR .
 
+git add ./
+
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet HEAD .; then
   echo "No changes detected, exiting."
