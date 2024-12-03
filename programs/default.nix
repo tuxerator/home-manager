@@ -46,10 +46,10 @@ with lib;
     xdg.portal.xdgOpenUsePortal = true;
 
 
-    services.udiskie = {
-      enable = true;
-      automount = false;
-    };
+    # services.udiskie = {
+    #   enable = true;
+    #   automount = false;
+    # };
 
     flatpak.packages = {
       "org.signal.Signal" = {
