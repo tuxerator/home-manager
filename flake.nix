@@ -57,6 +57,7 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
+          ./carrie.nix
           flatpaks.homeManagerModules.nix-flatpak
           stylix.homeManagerModules.stylix
         ];

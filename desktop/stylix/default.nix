@@ -23,7 +23,7 @@
       };
 
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "Meslo" "Hack" ]; };
+        package = pkgs.nerd-fonts.hack;
         name = "Hack Nerd Font";
       };
 
