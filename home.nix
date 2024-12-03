@@ -4,7 +4,6 @@
   imports = [
     ./desktop
     ./programs
-    ./langs
     ./programs/neovim
     ./email.nix
   ];
