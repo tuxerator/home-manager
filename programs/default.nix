@@ -45,7 +45,6 @@ with lib;
 
     xdg.portal.xdgOpenUsePortal = true;
 
-    services.network-manager-applet.enable = true;
 
     services.udiskie = {
       enable = true;
