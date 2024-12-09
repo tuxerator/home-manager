@@ -7,14 +7,14 @@
         threading-enabled = true;
       };
       viewer = {
-        pager = "nvim -M -c \":set filetype=markdown\"";
+        pager = "nvim -M";
       };
       compose = {
         editor = "nvim";
       };
       filters = {
         "text/plain" = "cat /dev/stdin";
-        "text/html" = "pandoc -f html -t markdown";
+        "text/html" = "pandoc -f html -t plain";
       };
     };
   };
