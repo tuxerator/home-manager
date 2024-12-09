@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.aerc = {
     enable = true;
     extraConfig = {
@@ -14,8 +14,11 @@
       };
       filters = {
         "text/plain" = "cat /dev/stdin";
-        "text/html" = "${config.programs.aerc.package}/libexec/aerc/filters/html | ${config.programs.aerc.package}/libexec/aerc/filters/colorize";
+        "text/html" = "pandoc -f html -t markdown";
       };
     };
   };
+  home.packages = with pkgs; [
+    pandoc
+  ];
 }
