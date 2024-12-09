@@ -14,7 +14,7 @@
       };
       filters = {
         "text/plain" = "cat /dev/stdin";
-        "text/html" = "${config.programs.aerc.package}/libexec/aerc/filters/html";
+        "text/html" = "${config.programs.aerc.package}/libexec/aerc/filters/html | ${config.programs.aerc.package}/libexec/aerc/filters/colorize";
       };
     };
   };
