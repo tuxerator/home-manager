@@ -13,7 +13,6 @@
       filters = {
         "text/plain" = "${config.programs.aerc.package}/libexec/aerc/filters/colorize";
         "text/html" = "${config.programs.aerc.package}/libexec/aerc/filters/html | ${config.programs.aerc.package}/libexec/aerc/filters/colorize";
-        "text/*" = "bat -fP --file-name=\"$AERC_FILENAME\" --style=plain";
         ".headers" = "${config.programs.aerc.package}/libexec/aerc/filters/colorize";
       };
     };
