@@ -7,7 +7,7 @@
         threading-enabled = true;
       };
       viewer = {
-        pager = "nvim -M -c set filetype=md";
+        pager = "nvim -M -c \":set filetype=md\"";
       };
       compose = {
         editor = "nvim";
