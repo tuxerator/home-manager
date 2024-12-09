@@ -6,9 +6,7 @@
       ui = {
         threading-enabled = true;
       };
-      viewer = {
-        pager = "less -Rc";
-      };
+      viewer = { };
       compose = {
         editor = "nvim";
       };
