@@ -61,19 +61,4 @@
       withExternalGnupg = true;
     };
   };
-  programs.aerc = {
-    enable = true;
-    extraConfig = {
-      general.unsafe-accounts-conf = true;
-      viewer = {
-        pager = "nvim -M";
-      };
-      compose = {
-        editor = "nvim";
-      };
-      filters = {
-        "text/plain" = "cat /dev/stdin";
-      };
-    };
-  };
 }

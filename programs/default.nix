@@ -10,6 +10,7 @@ with lib;
     ./obs.nix
     ./alacritty.nix
     ./creative.nix
+    ./aerc.nix
   ];
 
   options = {
