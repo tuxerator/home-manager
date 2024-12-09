@@ -7,18 +7,21 @@
         threading-enabled = true;
       };
       viewer = {
-        pager = "nvim -M";
+        pager = "less -Rc";
       };
       compose = {
         editor = "nvim";
       };
       filters = {
-        "text/plain" = "cat /dev/stdin";
-        "text/html" = "pandoc -f html -t plain";
+        "text/plain" = "${config.programs.aerc.package}/libexec/aerc/filters/colorize";
+        "text/html" = "${config.programs.aerc.package}/libexec/aerc/filters/html | ${config.programs.aerc.package}/libexec/aerc/filters/colorize";
+        "text/*" = "bat -fP --file-name=\"$AERC_FILENAME\" --style=plain";
+        ".headers" = "${config.programs.aerc.package}/libexec/aerc/filters/colorize";
       };
     };
   };
   home.packages = with pkgs; [
     pandoc
+    bat
   ];
 }
