@@ -9,6 +9,7 @@ with lib;
     ./flatpak.nix
     ./obs.nix
     ./alacritty.nix
+    ./creative.nix
   ];
 
   options = {
