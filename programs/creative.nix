@@ -6,6 +6,7 @@
     calf
     darktable
     fluidsynth
+    qsynth
     #    davinci-resolve
   ];
 }
