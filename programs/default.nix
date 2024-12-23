@@ -11,6 +11,7 @@ with lib;
     ./alacritty.nix
     ./creative.nix
     ./aerc.nix
+    ./audio.nix
   ];
 
   options = {
