@@ -5,6 +5,7 @@
     vamp-plugin-sdk
     calf
     darktable
+    fluidsynth
     #    davinci-resolve
   ];
 }
