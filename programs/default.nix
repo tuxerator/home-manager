@@ -40,6 +40,7 @@ with lib;
       flare-signal
       plex-media-player
       pwvucontrol
+      yt-dlp
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
