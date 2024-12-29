@@ -41,6 +41,7 @@ with lib;
       plex-media-player
       pwvucontrol
       yt-dlp
+      mpv
     ];
 
     home.default-terminal = "${pkgs.alacritty}/bin/alacritty";

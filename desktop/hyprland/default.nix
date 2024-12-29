@@ -206,6 +206,11 @@ with lib;
         bindm = [
           "$mod, mouse:272, movewindow"
         ];
+
+        bindl = [
+          ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
+          ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 0x0, auto\""
+        ];
       };
     };
 
