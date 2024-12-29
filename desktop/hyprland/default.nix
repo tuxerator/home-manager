@@ -209,7 +209,9 @@ with lib;
 
         bindl = [
           ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
+          ", switch:on:Lid Switch, exec, eww close bar"
           ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 0x0, auto\""
+          ", switch:off:Lid Switch, exec, eww open bar --screen 0"
         ];
       };
     };
