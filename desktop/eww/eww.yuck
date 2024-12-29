@@ -98,7 +98,7 @@
 
 (defwindow bar
   :windowtype "dock"
-  :monitor 0
+  :monitor '["<primary>", "eDP-1", "DP-1", "HDMI-A-1", 0]'
   :geometry (geometry :x "0%"
                       :y "0%"
                       :width "100%"
