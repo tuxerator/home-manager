@@ -12,6 +12,7 @@ with lib;
     ./creative.nix
     ./aerc.nix
     ./audio.nix
+    ./firefox.nix
   ];
 
   options = {
@@ -31,7 +32,6 @@ with lib;
       direnv
       libreoffice
       whisper
-      firefox
       papers
       hotspot
       perf-tools

@@ -4,6 +4,10 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -35,6 +39,7 @@
     , neovim-nightly-overlay
     , flatpaks
     , stylix
+    , nur
     , ...
     }@inputs:
 
@@ -43,6 +48,7 @@
       overlays = [
         #    neovim-nightly-overlay.overlays.default
         #    (_: _: { nil = nil-ls.packages.${system}.nil; })
+        nur.overlays.default
       ];
 
       pkgs = import nixpkgs {
