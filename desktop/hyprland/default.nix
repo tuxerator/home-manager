@@ -208,11 +208,14 @@ with lib;
         ];
 
         bindl = [
-          ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          ", switch:on:Lid Switch, exec, eww close bar"
-          ", switch:on:Lid Switch, exec, eww open bar"
-          ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 0x0, 1\""
-          ", switch:off:Lid Switch, exec, eww open bar"
+          ", switch:on:Lid Switch, exec, ${pkgs.writeShellScript "on-lid-close" ''
+          eww close bar
+          hyprctl keyword monitor "eDP-1, disable"
+          eww open bar''}"
+          ", switch:off:Lid Switch, exec, ${pkgs.writeShellScript "on-lid-close" ''
+          eww close bar
+          hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
+          eww open bar''}"
         ];
       };
     };
