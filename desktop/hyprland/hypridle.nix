@@ -20,6 +20,7 @@
           {
             timeout = 700;
             on-timeout = "systemctl suspend-then-hibernate";
+            on-resume = "eww close bar; eww open bar";
           }
         ];
       };
