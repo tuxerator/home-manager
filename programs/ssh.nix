@@ -4,6 +4,7 @@
     enable = true;
     extraConfig = ''
       PasswordAuthentication no
+      IdentitiesOnly yes
     '';
     matchBlocks = {
       "192.168.*.*" = {
