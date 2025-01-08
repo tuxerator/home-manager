@@ -53,6 +53,8 @@ in
       ripgrep
       bash
       nixpkgs-fmt
+      nixfmt
+      nixd
       nil
       lazygit
       tree-sitter

@@ -10,15 +10,8 @@ return {
       },
       servers = {
         gopls = {},
-        nil_ls = {
+        nixd = {
           mason = false,
-          settings = {
-            ["nil"] = {
-              formatting = {
-                command = { "nixpkgs-fmt" },
-              },
-            },
-          },
         },
         ltex = {
           settings = {
