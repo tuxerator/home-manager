@@ -98,7 +98,7 @@
 
 (defwindow bar
   :windowtype "dock"
-  :monitor '["0x40BA", 0]'
+  :monitor '["0x40BA", 0, 1, 2]'
   :geometry (geometry :x "0%"
                       :y "0%"
                       :width "100%"
