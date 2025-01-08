@@ -14,8 +14,9 @@
           privateDefault = "DuckDuckGo";
           force = true;
         };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          bitwarden
+        extensions = with pkgs.nur.repos; [
+          rycee.firefox-addons.bitwarden
+          rycee.firefox-addons.ublock-origin
         ];
         settings = {
           "extensions.autoDisableScopes" = 0;
