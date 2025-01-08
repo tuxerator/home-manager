@@ -215,6 +215,7 @@ with lib;
           ", switch:off:Lid Switch, exec, ${pkgs.writeShellScript "on-lid-close" ''
           eww close bar
           hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
+          sleep 0.2
           eww open bar''}"
         ];
       };
