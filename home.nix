@@ -8,8 +8,16 @@
     ./email.nix
   ];
 
-  home.username = "jakob";
-  home.homeDirectory = "/home/jakob";
+  home = {
+    username = "jakob";
+    homeDirectory = "/home/jakob";
+  };
+
+  xdg = {
+    userDirs = {
+      enable = true;
+    };
+  };
 
   nixpkgs = {
     config = {
