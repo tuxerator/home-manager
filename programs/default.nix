@@ -5,6 +5,7 @@ with lib;
   imports = [
     ./ssh.nix
     ./zsh
+    ./gnupg
     ./rbw.nix
     ./flatpak.nix
     ./obs.nix
