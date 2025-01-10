@@ -5,7 +5,7 @@ let cfg = config.hyprland;
 in with lib;
 
 {
-  imports = [ ./swayidle.nix ./hyprlock.nix ];
+  imports = [ ./hypridle.nix ./hyprlock.nix ];
 
   options = {
     hyprland = {
