@@ -10,8 +10,7 @@
         listener = [
           {
             timeout = 30;
-            on-timeout = ''
-              if [ "$(loginctl show-session self -P State)" = "active" ]; then loginctl lock-session; fi'';
+            on-timeout = "loginctl lock-session";
           }
           {
             timeout = 40;
