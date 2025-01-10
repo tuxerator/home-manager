@@ -29,10 +29,11 @@
           PartOf = "lock.target";
         };
 
-        Install = { RequiredBy = [ "lock.target" ]; };
+        Install = { WantedBy = [ "lock.target" ]; };
         Service = {
           ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
           Type = "forking";
+          Restart = "on-failure";
         };
       };
     };
