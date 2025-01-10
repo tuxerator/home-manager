@@ -5,7 +5,8 @@
     events = [
       {
         event = "before-sleep";
-        command = "loginctl lock-session";
+        command =
+          "${pkgs.sysvtools}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
       }
       {
         event = "lock";
