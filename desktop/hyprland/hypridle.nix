@@ -31,8 +31,9 @@
 
         Install = { RequiredBy = [ "lock.target" ]; };
         Service = {
-          ExecStart = ''
-            if ! [ pgrep -x "hyprlock" > /dev/null ]; then ${pkgs.hyprlock}/bin/hyprlock; fi'';
+          ExecStart = "${pkgs.writeShellScript "start-hyprlock" ''
+            #!/run/current-system/sw/bin/bash
+            if ! [ pgrep -x "hyprlock" > /dev/null ]; then ${pkgs.hyprlock}/bin/hyprlock; fi''}";
           Type = "forking";
         };
       };
