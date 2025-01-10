@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     audacity
     vamp-plugin-sdk
@@ -7,6 +6,6 @@
     darktable
     fluidsynth
     qsynth
-    #    davinci-resolve
+    davinci-resolve
   ];
 }

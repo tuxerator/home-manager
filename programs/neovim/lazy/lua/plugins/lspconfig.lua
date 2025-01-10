@@ -1,3 +1,18 @@
+function getHostname()
+  local f = io.popen("hostname")
+  local hostname = f:read("*a") or ""
+  f:close()
+  hostname = string.gsub(hostname, "\n$", "")
+  return hostname
+end
+function getUsername()
+  local f = io.popen("whoami")
+  local username = f:read("*a") or ""
+  f:close()
+  username = string.gsub(username, "\n$", "")
+  return username
+end
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -12,6 +27,30 @@ return {
         gopls = {},
         nixd = {
           mason = false,
+          settings = {
+            nixd = {
+              nixpkgs = {
+                expr = "import <nixpkgs> { }",
+              },
+              formatting = {
+                command = { "nixfmt" },
+              },
+              options = {
+                nixos = {
+                  expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.'
+                    .. getHostname()
+                    .. ".options",
+                },
+                home_manager = {
+                  expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."'
+                    .. getUsername()
+                    .. "@"
+                    .. getHostname()
+                    .. '".options',
+                },
+              },
+            },
+          },
         },
         ltex = {
           settings = {
