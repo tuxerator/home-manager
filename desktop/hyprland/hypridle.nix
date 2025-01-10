@@ -26,7 +26,9 @@
       hyprlock = {
         Unit = {
           Description = "Lock screen daemon";
+          OnSucess = "unlock.target";
           PartOf = "lock.target";
+          After = "lock.target";
         };
 
         Install = { WantedBy = [ "lock.target" ]; };
