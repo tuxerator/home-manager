@@ -1,16 +1,11 @@
 { config, pkgs, lib, flake-inputs, ... }:
 
-let
-  cfg = config.hyprland;
-in
+let cfg = config.hyprland;
 
-with lib;
+in with lib;
 
 {
-  imports = [
-    ./hypridle.nix
-    ./hyprlock.nix
-  ];
+  imports = [ ./swayidle.nix ./hyprlock.nix ];
 
   options = {
     hyprland = {
@@ -134,9 +129,7 @@ with lib;
           accel_profile = "flat";
         };
 
-        cursor = {
-          no_hardware_cursors = true;
-        };
+        cursor = { no_hardware_cursors = true; };
 
         windowrulev2 = [
           "idleinhibit focus, class:(steam_proton)"
@@ -181,47 +174,36 @@ with lib;
           "$mod CTRL, L, exec, loginctl lock-session"
           "$mod CTRL, S, togglespecialworkspace, steam"
           "$mod CTRLALT, S, movetoworkspace, special:steam"
-        ]
-        ++ (
-          builtins.concatLists (
-            builtins.genList
-              (
-                x:
-                let
-                  ws =
-                    let
-                      c = (x + 1) / 10;
-                    in
-                    builtins.toString (x + 1 - (c * 10));
-                in
-                [
-                  "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                  "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-                  "$mod CTRL, ${ws}, togglespecialworkspace, ${toString (x + 1)}"
-                  "$mod CTRLALT, ${ws}, movetoworkspace, special:${toString (x + 1)}"
-                ]
-              ) 10)
-        ) ++ cfg.keybinds;
+        ] ++ (builtins.concatLists (builtins.genList (x:
+          let
+            ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
+          in [
+            "$mod, ${ws}, workspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            "$mod CTRL, ${ws}, togglespecialworkspace, ${toString (x + 1)}"
+            "$mod CTRLALT, ${ws}, movetoworkspace, special:${toString (x + 1)}"
+          ]) 10)) ++ cfg.keybinds;
 
-        bindm = [
-          "$mod, mouse:272, movewindow"
-        ];
+        bindm = [ "$mod, mouse:272, movewindow" ];
 
         bindl = [
-          ", switch:on:Lid Switch, exec, ${pkgs.writeShellScript "on-lid-close" ''
-          eww close bar
-          hyprctl keyword monitor "eDP-1, disable"
-          sleep 0.5
-          eww open bar''}"
-          ", switch:off:Lid Switch, exec, ${pkgs.writeShellScript "on-lid-close" ''
-          eww close bar
-          hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
-          sleep 0.5
-          eww open bar''}"
+          ", switch:on:Lid Switch, exec, ${
+            pkgs.writeShellScript "on-lid-close" ''
+              eww close bar
+              hyprctl keyword monitor "eDP-1, disable"
+              sleep 0.5
+              eww open bar''
+          }"
+          ", switch:off:Lid Switch, exec, ${
+            pkgs.writeShellScript "on-lid-close" ''
+              eww close bar
+              hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
+              sleep 0.5
+              eww open bar''
+          }"
         ];
       };
     };
-
 
   };
 }
