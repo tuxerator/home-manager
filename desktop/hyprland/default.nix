@@ -186,22 +186,22 @@ in with lib;
 
         bindm = [ "$mod, mouse:272, movewindow" ];
 
-        bindl = [
-          ", switch:on:Lid Switch, exec, ${
-            pkgs.writeShellScript "on-lid-close" ''
-              eww close bar
-              hyprctl keyword monitor "eDP-1, disable"
-              sleep 0.5
-              eww open bar''
-          }"
-          ", switch:off:Lid Switch, exec, ${
-            pkgs.writeShellScript "on-lid-close" ''
-              eww close bar
-              hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
-              sleep 0.5
-              eww open bar''
-          }"
-        ];
+        # bindl = [
+        #   ", switch:on:Lid Switch, exec, ${
+        #     pkgs.writeShellScript "on-lid-close" ''
+        #       eww close bar
+        #       hyprctl keyword monitor "eDP-1, disable"
+        #       sleep 0.5
+        #       eww open bar''
+        #   }"
+        #   ", switch:off:Lid Switch, exec, ${
+        #     pkgs.writeShellScript "on-lid-close" ''
+        #       eww close bar
+        #       hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
+        #       sleep 0.5
+        #       eww open bar''
+        #   }"
+        # ];
       };
     };
 
