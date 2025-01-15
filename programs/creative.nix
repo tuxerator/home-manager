@@ -7,5 +7,6 @@
     fluidsynth
     qsynth
     davinci-resolve
+    ardour
   ];
 }
