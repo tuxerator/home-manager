@@ -25,23 +25,13 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-
-    flatpaks = {
-      url = "github:gmodena/nix-flatpak";
-    };
+    flatpaks = { url = "github:gmodena/nix-flatpak"; };
 
     stylix.url = "github:danth/stylix";
   };
 
-  outputs =
-    { nixpkgs
-    , home-manager
-    , neovim-nightly-overlay
-    , flatpaks
-    , stylix
-    , nur
-    , ...
-    }@inputs:
+  outputs = { nixpkgs, home-manager, neovim-nightly-overlay, flatpaks, stylix
+    , nur, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -51,13 +41,11 @@
         nur.overlays.default
       ];
 
-      pkgs = import nixpkgs {
-        inherit system overlays;
-      };
-    in
-    {
-      homeConfigurations."jakob@carrie2" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      pkgs = import nixpkgs { inherit system overlays; };
+    in {
+      homeConfigurations."jakob@carrie2" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
@@ -68,50 +56,42 @@
           stylix.homeManagerModules.stylix
         ];
 
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+          extraSpecialArgs.flake-inputs = inputs;
+        };
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs.flake-inputs = inputs;
-      };
+      homeConfigurations."jakob@thickPad" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-      homeConfigurations."jakob@thickPad" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [
+            ./home.nix
+            ./thickPad.nix
+            flatpaks.homeManagerModules.nix-flatpak
+            stylix.homeManagerModules.stylix
+          ];
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
-          ./thickPad.nix
-          flatpaks.homeManagerModules.nix-flatpak
-          stylix.homeManagerModules.stylix
-        ];
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+          extraSpecialArgs.flake-inputs = inputs;
+        };
+      homeConfigurations."jakob@carrie" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [ ./home.nix flatpaks.homeManagerModules.nix-flatpak ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs.flake-inputs = inputs;
-      };
-      homeConfigurations."jakob@carrie" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+          extraSpecialArgs.flake-inputs = inputs;
+        };
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
-          flatpaks.homeManagerModules.nix-flatpak
-        ];
-
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs.flake-inputs = inputs;
-      };
-
-
-      devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
-          neovim
-        ];
-      };
+      devShells.${system}.default =
+        pkgs.mkShell { packages = with pkgs; [ neovim ]; };
     };
 }

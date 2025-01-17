@@ -1,17 +1,14 @@
 { config, pkgs, flake-inputs, ... }:
 
 {
-  imports = [
-    ./desktop
-    ./programs
-    ./programs/neovim
-    ./email.nix
-  ];
+  imports = [ ./desktop ./programs ./programs/neovim ./email.nix ];
 
   home = {
     username = "jakob";
     homeDirectory = "/home/jakob";
   };
+
+  home.default-terminal = "${pkgs.alacritty}/bin/alacritty";
 
   xdg = {
     userDirs = {
@@ -20,11 +17,7 @@
     };
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs = { config = { allowUnfree = true; }; };
 
   nix = {
     package = pkgs.nix;

@@ -1,13 +1,10 @@
 { config, lib, ... }:
-let
-  cfg = config.hyprlock;
-in
+let cfg = config.hyprlock;
 
-with lib;
-{
+in with lib; {
   options = {
     hyprlock = {
-      background = mkoption {
+      background = mkOption {
         type = types.str;
         default = "";
       };
@@ -19,7 +16,7 @@ with lib;
       settings = {
         general = {
           disable_loading_bar = true;
-          grace = 00;
+          grace = 0;
           hide_cursor = true;
           no_fade_in = false;
         };

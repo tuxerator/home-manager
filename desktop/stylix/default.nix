@@ -33,9 +33,7 @@
       };
     };
 
-    opacity = {
-      terminal = 0.7;
-    };
+    opacity = { terminal = 0.7; };
   };
 
   gtk.iconTheme = {

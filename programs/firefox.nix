@@ -3,10 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [
-      "en-GB"
-      "de"
-    ];
+    languagePacks = [ "en-GB" "de" ];
     profiles = {
       "default" = {
         search = {
@@ -18,9 +15,7 @@
           rycee.firefox-addons.bitwarden
           rycee.firefox-addons.ublock-origin
         ];
-        settings = {
-          "extensions.autoDisableScopes" = 0;
-        };
+        settings = { "extensions.autoDisableScopes" = 0; };
       };
     };
   };

@@ -8,6 +8,7 @@ in with lib;
   imports = [ ./swayidle.nix ./hyprlock.nix ];
 
   options = {
+    home.default-terminal = mkOption { type = types.str; };
     hyprland = {
       monitors = mkOption {
         default = [ ",preferred,auto,1" ];
@@ -82,7 +83,6 @@ in with lib;
 
     wayland.windowManager.hyprland = {
       enable = true;
-      xwayland.enable = false;
       settings = {
         "$mod" = "SUPER";
 
@@ -129,7 +129,7 @@ in with lib;
           accel_profile = "flat";
         };
 
-        cursor = { no_hardware_cursors = true; };
+        # cursor = { no_hardware_cursors = true; };
 
         windowrulev2 = [
           "idleinhibit focus, class:(steam_proton)"
@@ -202,6 +202,7 @@ in with lib;
         #       eww open bar''
         #   }"
         # ];
+        debug = { disable_logs = false; };
       };
     };
 

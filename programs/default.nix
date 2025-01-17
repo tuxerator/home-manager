@@ -1,26 +1,20 @@
 { lib, config, pkgs, ... }:
 
-with lib;
-{
+with lib; {
   imports = [
     ./ssh.nix
     ./zsh
     ./gnupg
     ./rbw.nix
     ./flatpak.nix
-    ./obs.nix
     ./alacritty.nix
-    ./creative.nix
+    # ./creative.nix
     ./aerc.nix
     ./audio.nix
     ./firefox.nix
   ];
 
-  options = {
-    home.default-terminal = mkOption {
-      type = types.str;
-    };
-  };
+  options = { home.default-terminal = mkOption { type = types.str; }; };
 
   config = {
 
@@ -28,7 +22,6 @@ with lib;
       helvum
       sshfs
       piper
-      chromium
       lazygit
       direnv
       libreoffice
@@ -50,7 +43,6 @@ with lib;
 
     xdg.portal.xdgOpenUsePortal = true;
 
-
     # services.udiskie = {
     #   enable = true;
     #   automount = false;
@@ -59,7 +51,12 @@ with lib;
     flatpak.packages = {
       "org.signal.Signal" = {
         autostart = {
-          args = [ "--use-tray-icon" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" "--enable-features=WaylandWindowDecorations" ];
+          args = [
+            "--use-tray-icon"
+            "--enable-features=UseOzonePlatform"
+            "--ozone-platform=wayland"
+            "--enable-features=WaylandWindowDecorations"
+          ];
         };
       };
       "dev.vencord.Vesktop" = { };
